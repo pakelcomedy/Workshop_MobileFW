@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:workshop_mobile/resetpassword/reset_password_screen.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -170,14 +171,20 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
     );
   }
 
-  // "Forgot Password?" link
+  // "Forgot Password?" link with reset password bottom sheet
   Widget _buildForgotPassword() {
     return Align(
       alignment: Alignment.centerRight,
       child: TextButton(
         onPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text("Fitur lupa password belum tersedia")),
+          // Show reset password bottom sheet
+          showModalBottomSheet(
+            context: context,
+            isScrollControlled: true,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+            ),
+            builder: (context) => ResetPasswordBottomSheet(),
           );
         },
         child: Text("Lupa Password?", style: TextStyle(color: Colors.blue)),

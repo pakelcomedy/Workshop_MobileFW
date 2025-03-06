@@ -117,14 +117,25 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
-  // Header with logo and title
+  // Enhanced header with a gradient avatar border
   Widget _buildHeader() {
     return Column(
       children: [
-        CircleAvatar(
-          radius: 36,
-          backgroundColor: Colors.blue,
-          child: const Icon(Icons.person_add, color: Colors.white, size: 36),
+        Container(
+          padding: const EdgeInsets.all(3),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: LinearGradient(
+              colors: [Colors.blue.shade400, Colors.blue.shade700],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+          child: CircleAvatar(
+            radius: 36,
+            backgroundColor: Colors.white,
+            child: Icon(Icons.person_add, color: Colors.blue.shade700, size: 36),
+          ),
         ),
         const SizedBox(height: 12),
         const Text(
@@ -366,6 +377,7 @@ class _RegisterPageState extends State<RegisterPage> {
               color: Colors.black.withOpacity(0.05),
             ),
           ),
+          // Registration form wrapped in a scrollable card
           Center(
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 36),
