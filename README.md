@@ -1,3 +1,4 @@
+```
 │── lib/
 │   ├── config/
 │   ├── model/
@@ -11,3 +12,4 @@
 │   │   │   ├── login_page.dart
 │   │   │   ├── register_page.dart
 │   │   │   ├── reset_password_screen.dart
+```
