@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart'; // Ensure that the intl dependency is added in pubspec.yaml
+import 'package:intl/intl.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -30,7 +30,7 @@ class _RegisterPageState extends State<RegisterPage> {
   // Gender options
   final List<String> _genderOptions = ['Laki-laki', 'Perempuan', 'Lainnya'];
 
-  // Date formatter for birthday
+  // Date formatter
   final DateFormat _dateFormat = DateFormat('dd-MM-yyyy');
 
   @override

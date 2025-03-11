@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
       // Simulate API delay
       await Future.delayed(Duration(seconds: 2));
       
-      if (_emailController.text == "user@example.com" && _passwordController.text == "password") {
+      if (_emailController.text == "habi@gmail.com" && _passwordController.text == "password") {
         Navigator.pushReplacementNamed(context, '/home');
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -153,23 +153,6 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
     );
   }
 
-  // "Remember Me" checkbox
-  Widget _buildRememberMeCheckbox() {
-    return Row(
-      children: [
-        Checkbox(
-          activeColor: Colors.blue,
-          value: _rememberMe,
-          onChanged: (value) {
-            setState(() {
-              _rememberMe = value ?? false;
-            });
-          },
-        ),
-        Text("Ingat saya", style: TextStyle(color: Colors.black87))
-      ],
-    );
-  }
 
   // "Forgot Password?" link with reset password bottom sheet
   Widget _buildForgotPassword() {
@@ -321,7 +304,6 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
                       SizedBox(height: 16),
                       _buildPasswordField(),
                       _buildForgotPassword(),
-                      _buildRememberMeCheckbox(),
                       SizedBox(height: 24),
                       _buildLoginButton(),
                       SizedBox(height: 16),
